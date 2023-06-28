@@ -17,7 +17,7 @@ export class UserRegistrationService {
 
   //Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    console.log('userDetails : ' + JSON.stringify(userDetails));
     return this.http.post(apiUrl + 'users', userDetails).pipe(
       catchError(this.handleError)
     );
@@ -166,8 +166,8 @@ export class UserRegistrationService {
       console.error('Some error occured: ', error.error.message);
     } else {
       console.error(
-        `Error Status cod ${error.status}, ` +
-        `Error body is : ${error.error}`);
+        `Error Status code: ${error.status}, ` +
+        `Error body is: ${error.error}`);
     }
     return throwError(
       'Something bad happened; please try again later.'
