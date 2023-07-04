@@ -23,10 +23,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { GenreComponent } from './genre/genre.component';
+import { DirectorComponent } from './director/director.component';
+import { MoveDetailComponent } from './move-detail/move-detail.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'user-profile', component: UserProfileComponent},
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' }
 ];
 
@@ -39,7 +44,10 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     UserProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    GenreComponent,
+    DirectorComponent,
+    MoveDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +63,8 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
