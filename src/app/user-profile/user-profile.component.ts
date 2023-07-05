@@ -28,7 +28,7 @@ export class UserProfileComponent implements OnInit {
   getUser(): void {
     this.fetchApiData.getUser().subscribe((response) => {
       this.userData = response;
-      console.log(this.userData);
+      //console.log(this.userData);
       return this.userData
 
     })

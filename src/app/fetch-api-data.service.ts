@@ -58,6 +58,7 @@ export class UserRegistrationService {
 
   //api call for GET director data
   public getDirectorDetail(directorName: string): Observable<any> {
+    console.log ('director detail');
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/director/:name', {headers: new HttpHeaders(
       {

@@ -40,14 +40,14 @@ export class MovieCardComponent implements OnInit {
   }
 
   openDirectorDetail(name: string, bio: string, birthYear: number, deathYear: number): void {
-    this.dialog.open(DirectorComponent), {
+    this.dialog.open(DirectorComponent, {
       data: {
         name: name,
         bio: bio,
         birthYear: birthYear,
         deathYear: deathYear
       }
-    }
+    })
   }
 
   openMovieDetail(year: number, description: string): void {
