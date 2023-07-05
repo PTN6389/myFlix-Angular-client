@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UserRegistrationService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef } from '@angular/material/dialog';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-user-profile',
@@ -28,7 +29,8 @@ export class UserProfileComponent implements OnInit {
     this.fetchApiData.getUser().subscribe((response) => {
       this.userData = response;
       console.log(this.userData);
-      return this.userData;
+      return this.userData
+
     })
   }
 
