@@ -35,7 +35,7 @@
         <input
           matInput
           [(ngModel)]="userData.birthday"
-          [matDatepicker]="picker3"
+          type="date"
           placeholder="Birthday"
           name="Birthday">{{userData.birthday | date: "mm/dd/yyyy"}}
       </mat-form-field>
