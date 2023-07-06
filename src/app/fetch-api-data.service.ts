@@ -11,11 +11,11 @@ const apiUrl = 'https://myflix-movieapp.herokuapp.com/';
 })
 
 export class UserRegistrationService {
-  // Inject the HttpClient module to the constructor params
-  // This will provide HttpClient to the entire class, making it available via this.http
+  /**  Inject the HttpClient module to the constructor params
+  * This will provide HttpClient to the entire class, making it available via this.http */
   constructor(private http: HttpClient) { }
 
-  //Making the api call for the user registration endpoint
+  /** Making the api call for the user registration endpoint */
   public userRegistration(userDetails: any): Observable<any> {
     console.log('userDetails : ' + JSON.stringify(userDetails));
     return this.http.post(apiUrl + 'users', userDetails).pipe(
@@ -23,14 +23,14 @@ export class UserRegistrationService {
     );
   }
 
-  //api call for user login
+  /** api call for user login */
   public userLogin(userDetails: any): Observable<any> {
     return this.http.post(apiUrl + 'login', userDetails).pipe(
       catchError(this.handleError)
     );
   }
 
-  //api call for GET all movies
+  /** api call for GET all movies */
   public getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies', {headers: new HttpHeaders(
@@ -42,7 +42,7 @@ export class UserRegistrationService {
       );
   }
 
-  //api call for GET one movie
+  // api call for GET one movie
   public getMovieDetail(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/:title', {headers: new HttpHeaders(
@@ -83,7 +83,7 @@ export class UserRegistrationService {
     );
   }
 
-  //api call for GET user
+  /** api call for GET user */
 
   public getUser(): Observable<any> {
     const userName = localStorage.getItem('userName');

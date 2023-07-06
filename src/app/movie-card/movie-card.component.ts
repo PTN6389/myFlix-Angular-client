@@ -21,7 +21,9 @@ export class MovieCardComponent implements OnInit {
   ngOnInit(): void {
     this.getMovies();
   }
-
+/**
+ * Return the list of all movies
+ */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -29,6 +31,13 @@ export class MovieCardComponent implements OnInit {
       return this.movies;
     });
   }
+
+  /**
+   *
+   * @param name
+   * @param description
+   * Pass in the Genre details to display on the GenreComponent
+   */
 
   openGenreDetail(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
@@ -38,6 +47,15 @@ export class MovieCardComponent implements OnInit {
       }
     })
   }
+
+  /**
+   *
+   * @param name
+   * @param bio
+   * @param birthYear
+   * @param deathYear
+   * Pass in the Director details to display on the DirectorComponent
+   */
 
   openDirectorDetail(name: string, bio: string, birthYear: number, deathYear: number): void {
     this.dialog.open(DirectorComponent, {
@@ -50,6 +68,12 @@ export class MovieCardComponent implements OnInit {
     })
   }
 
+  /**
+   *
+   * @param year
+   * @param description
+   * Pass in the Movie Details to display on the MovieDetailsComponent
+   */
   openMovieDetail(year: number, description: string): void {
     this.dialog.open(MoveDetailComponent, {
       data: {
